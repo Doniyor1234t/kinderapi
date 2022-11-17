@@ -1,0 +1,6 @@
+{
+    "serverPort": 5070,
+    "MONGODB_URI": "mongodb://127.0.0.1:27017/studycrm",
+    "secretKey": "whosyourdaddy"
+    
+}
