@@ -19,7 +19,8 @@ const create = async (req, res) => {
         let createdAt = new Date()
         const group = new Group({title, direction, worker, price, status, createdAt })
         await group.save()
-        return res.json(group)
+        let newGroup = await Group.findOne({_id:group._id})
+        return res.json(newGroup)
     } catch (e) {
         console.log(e)
         res.send({message: "Serverda xatolik"})
