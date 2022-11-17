@@ -19,7 +19,7 @@ const create = async (req, res) => {
         let createdAt = new Date()
         const group = new Group({title, direction, worker, price, status, createdAt })
         await group.save()
-        let newGroup = await Group.findOne({_id:group._id})
+        let newGroup = await Group.findOne({_id:group._id}).populate(['direction','worker'])
         return res.json(newGroup)
     } catch (e) {
         console.log(e)
